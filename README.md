@@ -1,44 +1,35 @@
-# nordaurora
+# nordaurora.nvim
 
-A single Nordic Neovim theme tuned to resemble `nordic.nvim`: calm dark
-surfaces, soft contrast, and warm Aurora accents for long coding sessions.
+A Nordic Neovim colorscheme tuned for calm dark surfaces, soft contrast, and
+Aurora accents that stay readable during long sessions.
 
 ## Special Thanks
 
-- Inspired by [`nordic.nvim`](https://github.com/AlexvZyl/nordic.nvim) by AlexvZyl.
-- Built with appreciation for the original [Nord](https://www.nordtheme.com/) color palette project.
+- Inspired by [`nordic.nvim`](https://github.com/AlexvZyl/nordic.nvim) by AlexvZyl
+- Built with appreciation for the original [Nord](https://www.nordtheme.com/)
+  palette project
 
 ## Features
 
 - Single colorscheme: `nordaurora`
-- Palette overrides through `colors`
-- Highlight overrides through `on_highlights`
-- Transparent background and dim inactive window options
-- Terminal colors and a matching lualine theme included
-- Common plugin support for Telescope, blink.cmp, nvim-cmp, neo-tree,
-  nvim-tree, which-key, Lazy, Mason, gitsigns, flash.nvim, and indent guides
+- Transparent background and dim inactive window support
+- Terminal colors included
+- Matching `lualine` theme included
+- Palette overrides with `colors` and `on_colors`
+- Highlight overrides with `on_highlights`
+- Plugin support for Telescope, blink.cmp, nvim-cmp, neo-tree, nvim-tree,
+  which-key, Lazy, Mason, gitsigns, flash.nvim, and indent guides
 
 ## Install
 
-With `lazy.nvim` during local development:
+### `lazy.nvim`
 
 ```lua
 {
-  dir = "/path/to/nordaurora",
+  "nhnvrr/nordaurora.nvim",
   lazy = false,
   priority = 1000,
-  opts = {
-    transparent = false,
-    dim_inactive = false,
-    colors = {
-      blue = "#81A1C1",
-      bg = "#242933",
-    },
-    on_highlights = function(hl, c)
-      hl.CursorLineNr = { fg = c.yellow, bold = true }
-      hl.Comment = { fg = "#6c7a92", italic = true }
-    end,
-  },
+  opts = {},
   config = function(_, opts)
     require("nordaurora").setup(opts)
     vim.cmd.colorscheme("nordaurora")
@@ -46,9 +37,31 @@ With `lazy.nvim` during local development:
 }
 ```
 
-If you rename the project folder later, update `dir` to match.
+### Local development
+
+```lua
+{
+  dir = "/path/to/nordaurora.nvim",
+  lazy = false,
+  priority = 1000,
+  opts = {},
+  config = function(_, opts)
+    require("nordaurora").setup(opts)
+    vim.cmd.colorscheme("nordaurora")
+  end,
+}
+```
 
 ## Usage
+
+### Minimal setup
+
+```lua
+require("nordaurora").setup()
+vim.cmd.colorscheme("nordaurora")
+```
+
+### Default options
 
 ```lua
 require("nordaurora").setup({
@@ -65,9 +78,39 @@ require("nordaurora").setup({
     variables = {},
   },
   on_colors = function(colors)
-    colors.blue = "#89b8d6"
   end,
   on_highlights = function(highlights, colors)
+  end,
+})
+
+vim.cmd.colorscheme("nordaurora")
+```
+
+### Transparent background
+
+```lua
+require("nordaurora").setup({
+  transparent = true,
+})
+
+vim.cmd.colorscheme("nordaurora")
+```
+
+### Palette and highlight overrides
+
+```lua
+require("nordaurora").setup({
+  colors = {
+    bg = "#181a1f",
+    yellow = "#e7c173",
+  },
+  on_colors = function(colors)
+    colors.blue = "#8fbccf"
+    colors.purple = "#c7a0dc"
+  end,
+  on_highlights = function(highlights, colors)
+    highlights.CursorLineNr = { fg = colors.yellow, bold = true }
+    highlights.Comment = { fg = "#6c7a92", italic = true }
     highlights.Visual = { bg = colors.selection }
   end,
 })
@@ -75,14 +118,24 @@ require("nordaurora").setup({
 vim.cmd.colorscheme("nordaurora")
 ```
 
-## Customize
+### Styled syntax groups
 
-The main files to edit are:
+```lua
+require("nordaurora").setup({
+  styles = {
+    comments = { italic = true },
+    keywords = { italic = true },
+    functions = { bold = true },
+    strings = {},
+    types = { italic = true },
+    variables = {},
+  },
+})
 
-1. `lua/nordaurora/palette.lua`
-2. `lua/nordaurora/highlights.lua`
+vim.cmd.colorscheme("nordaurora")
+```
 
-## lualine
+## `lualine`
 
 ```lua
 require("lualine").setup({
@@ -91,6 +144,13 @@ require("lualine").setup({
   },
 })
 ```
+
+## Customize
+
+If you want to change the theme itself, start here:
+
+1. `lua/nordaurora/palette.lua`
+2. `lua/nordaurora/highlights.lua`
 
 ## License
 
