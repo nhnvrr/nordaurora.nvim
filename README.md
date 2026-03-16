@@ -1,4 +1,4 @@
-# nordaurora.nvim
+# Nord Aurora 🌘
 
 A Nordic Neovim colorscheme tuned for calm dark surfaces, soft contrast, and
 Aurora accents that stay readable during long sessions.
