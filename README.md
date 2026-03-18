@@ -145,6 +145,101 @@ require("lualine").setup({
 })
 ```
 
+## `neo-tree`
+
+```lua
+{
+  "nvim-neo-tree/neo-tree.nvim",
+  branch = "v3.x",
+  dependencies = {
+    "nvim-lua/plenary.nvim",
+    "MunifTanjim/nui.nvim",
+    "nvim-tree/nvim-web-devicons",
+  },
+  keys = {
+    { "<leader>e", "<cmd>Neotree filesystem reveal left toggle<CR>", desc = "Explorer" },
+    { "<leader>be", "<cmd>Neotree buffers reveal float toggle<CR>", desc = "Buffers" },
+    { "<leader>ge", "<cmd>Neotree git_status left<CR>", desc = "Git Explorer" },
+  },
+  opts = {
+    close_if_last_window = true,
+    popup_border_style = "rounded",
+    enable_git_status = true,
+    enable_diagnostics = true,
+    sort_case_insensitive = true,
+    source_selector = {
+      winbar = true,
+      statusline = false,
+      content_layout = "center",
+      tabs_layout = "equal",
+      show_scrolled_off_parent_node = true,
+      sources = {
+        { source = "filesystem", display_name = "Files" },
+        { source = "buffers", display_name = "Buffers" },
+        { source = "git_status", display_name = "Git" },
+      },
+    },
+    default_component_configs = {
+      container = {
+        enable_character_fade = false,
+      },
+      indent = {
+        with_markers = true,
+        with_expanders = true,
+        indent_size = 2,
+        padding = 1,
+      },
+      modified = {
+        symbol = "●",
+      },
+      name = {
+        highlight_opened_files = "all",
+        use_git_status_colors = true,
+      },
+      git_status = {
+        symbols = {
+          added = "+",
+          modified = "~",
+          deleted = "x",
+          renamed = ">",
+          untracked = "?",
+          ignored = ".",
+          unstaged = "!",
+          staged = "+",
+          conflict = "!",
+        },
+      },
+    },
+    filesystem = {
+      bind_to_cwd = true,
+      follow_current_file = { enabled = true },
+      filtered_items = {
+        visible = true,
+        hide_dotfiles = false,
+        hide_gitignored = false,
+      },
+      window = {
+        mappings = {
+          ["l"] = "open",
+          ["h"] = "close_node",
+          ["H"] = "toggle_hidden",
+          ["/"] = "filter_as_you_type",
+          ["Y"] = "copy_to_clipboard",
+        },
+      },
+    },
+    window = {
+      position = "left",
+      width = 34,
+      mappings = {
+        ["<space>"] = "none",
+        ["q"] = "close_window",
+      },
+    },
+  },
+}
+```
+
 ## Customize
 
 If you want to change the theme itself, start here:

@@ -26,3 +26,4 @@ WRN 2026-03-16T23:14:51.349 ?.10200    server_start:199: Failed to start server:
 WRN 2026-03-16T23:14:51.349 ?.10203    server_start:199: Failed to start server: operation not permitted: /var/folders/hc/d2vq6pp55s1cdq5yxhlxf0_40000gn/T/nvim.nhnvrr/e2Wuji/nvim.10203.0
 WRN 2026-03-16T23:35:57.186 ?.17008    server_start:199: Failed to start server: operation not permitted: /var/folders/hc/d2vq6pp55s1cdq5yxhlxf0_40000gn/T/nvim.nhnvrr/Gn5ZHh/nvim.17008.0
 WRN 2026-03-16T23:36:05.679 ?.17019    server_start:199: Failed to start server: operation not permitted: /var/folders/hc/d2vq6pp55s1cdq5yxhlxf0_40000gn/T/nvim.nhnvrr/M6Xdgi/nvim.17019.0
+WRN 2026-03-18T19:14:26.948 ?.40382    server_start:199: Failed to start server: operation not permitted: /var/folders/hc/d2vq6pp55s1cdq5yxhlxf0_40000gn/T/nvim.nhnvrr/xQFlK6/nvim.40382.0
