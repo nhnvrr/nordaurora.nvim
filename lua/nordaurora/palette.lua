@@ -7,7 +7,7 @@ local palette = {
   bg_alt = "#232522",
   bg_float = "#1D1F1C",
   bg_status = "#1D1F1C",
-  bg_visual = "#2B2E2A",
+  bg_visual = "#2F4254",
   fg = "#E5E9F0",
   fg_bright = "#ECEFF4",
   fg_soft = "#D8DEE9",
@@ -33,7 +33,7 @@ local function build_semantics(colors)
   colors.panel = color.blend(colors.bg_alt, colors.bg, 0.9)
   colors.panel_alt = color.blend(colors.bg_float, colors.bg, 0.82)
   colors.statusline = color.blend(colors.bg_status, colors.bg, 0.9)
-  colors.selection = color.blend(colors.blue, colors.bg, 0.18)
+  colors.selection = colors.bg_visual
   colors.selection_soft = color.blend(colors.purple, colors.bg, 0.12)
   colors.search = color.blend(colors.yellow, colors.bg, 0.2)
   colors.search_current = color.blend(colors.orange, colors.bg, 0.24)

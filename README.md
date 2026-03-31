@@ -102,6 +102,7 @@ vim.cmd.colorscheme("nordaurora")
 require("nordaurora").setup({
   colors = {
     bg = "#181a1f",
+    bg_visual = "#2f4254",
     yellow = "#e7c173",
   },
   on_colors = function(colors)
@@ -117,6 +118,8 @@ require("nordaurora").setup({
 
 vim.cmd.colorscheme("nordaurora")
 ```
+
+`colors.bg_visual` drives visual selection and focused menu states.
 
 ### Styled syntax groups
 
