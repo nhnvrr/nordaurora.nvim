@@ -11,8 +11,8 @@ end
 return {
   normal = mode(colors.blue),
   insert = mode(colors.green),
-  command = mode(colors.orange),
-  visual = mode(colors.purple),
+  command = mode(colors.purple),
+  visual = mode(colors.orange),
   replace = mode(colors.red),
   terminal = mode(colors.cyan),
   inactive = {

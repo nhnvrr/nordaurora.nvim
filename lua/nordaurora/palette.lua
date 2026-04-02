@@ -34,9 +34,9 @@ local function build_semantics(colors)
   colors.panel_alt = color.blend(colors.bg_float, colors.bg, 0.82)
   colors.statusline = color.blend(colors.bg_status, colors.bg, 0.9)
   colors.selection = colors.bg_visual
-  colors.selection_soft = color.blend(colors.purple, colors.bg, 0.12)
+  colors.selection_soft = color.blend(colors.orange, colors.bg, 0.12)
   colors.search = color.blend(colors.yellow, colors.bg, 0.2)
-  colors.search_current = color.blend(colors.orange, colors.bg, 0.24)
+  colors.search_current = color.blend(colors.purple, colors.bg, 0.24)
   colors.match = color.blend(colors.cyan, colors.bg, 0.18)
   colors.border_focus = color.blend(colors.blue, colors.border, 0.35)
 
@@ -74,7 +74,7 @@ local function build_semantics(colors)
     colors.green,
     colors.yellow,
     colors.blue,
-    colors.purple,
+    colors.orange,
     colors.cyan,
     colors.fg_dark,
     colors.fg_gutter,
@@ -82,7 +82,7 @@ local function build_semantics(colors)
     colors.green,
     colors.yellow,
     colors.blue,
-    colors.purple,
+    colors.orange,
     colors.cyan,
     colors.fg,
   }
